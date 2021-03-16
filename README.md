@@ -21,3 +21,10 @@ Possible link under recpie that will link the user outside the app.
 - Lingua Robot 
 - Flicker 
 - Open Food Facts 
+
+## Front end framwork 
+- JQuery 
+- Angular 
+- Svelte 
+- React
+- ETC...
