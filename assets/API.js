@@ -27,11 +27,9 @@ var cuisineType = [
 
 var recipeResults;
 //Function Calls
-getRecipes(generateRecipeFetchURL()).then(function(recipes) {
+getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes))
     //TODO: add function to display DOM Elements
-    
-    console.log(recipes);
-})
+    // displayRecipes(recipes)
 
 function generateRecipeFetchURL() {
     var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)];
