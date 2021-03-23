@@ -1,7 +1,7 @@
 // DOM (array of dummy data that is expected from API to test) 
 
 // mock data array: title, cook time, ingredients, cooking instructions, pictures 
-var recipes = [
+var testRecipes = [
   {
     title: 'Title1', 
     time: 1,
@@ -36,50 +36,47 @@ var recipes = [
 
 // (dummy data in variables for us to easily switch out for real data) 
 
+function displayRecipes(recipes){
+// console.log(recipe)
+console.log(recipes)
 // recipe container(s)
-var containerEl = $('.recipe-container'); 
+  var containerEl = $('.recipe-container'); 
 
 // for loop (loop recipe's array)
-for (i = 0; i < recipes.length; i++) {
-  console.log(recipes.length);
-  // dynamically create elements to hold data and append to container 
-  var ingredientsEl = $('<ul class="collection">');
+    for (i = 0; i < 3; i++) {
+      // console.log(recipes.length);
+      // dynamically create elements to hold data and append to container 
+      var ingredientsEl = $('<ul class="collection">');
 
-  // ingredients loop
-  for (j = 0; j < recipes[i].ingredientsList.length; j++){
-    console.log(recipes[i].ingredientsList[j]);
-    var ingredientEl = $('<li>');
-    ingredientEl.text(recipes[i].ingredientsList[j]);
+      // ingredients loop
+      for (j = 0; j < recipes[i].ingredientLines.length; j++){
+        // console.log(recipes[i].ingredientsList[j]);
+        var ingredientEl = $('<li>');
+        ingredientEl.text(recipes[i].ingredientLines[j]);
 
-    ingredientsEl.append(ingredientEl);
-  };
+        ingredientsEl.append(ingredientEl);
+      };
 
+  
+      var columnEl = $(`<div class="col s4">
+      <div class="card blue-grey darken-1">
+        <div class="card-image">
+          <img src=` + recipes[i].image + `>
+          <span class="card-title">` + recipes[i].label + `</span>
+        </div>
+        <div class="card-content white-text center-align">
+          <h6>INGREDIENTS:</h6><div class="ingredients-container"></div>
+          <br>
+          <h6>COOK TIME:</h6>` + recipes[i].url + `<div class="cook-time"></div>
+        </div>
+      </div>
+      </div>`);
 
-  var columnEl = $(`<div class="col s4">
-   <div class="card blue-grey darken-1">
-    <div class="card-image">
-      <img src="https://properfoodie.com/wp-content/uploads/2020/07/featured-sushi-2b-feature-sushi-2b-1.jpg">
-      <span class="card-title">` + recipes[i].title + `</span>
-    </div>
-    <div class="card-content white-text center-align">
-      <h6>INGREDIENTS:</h6><div class="ingredients-container"></div>
-      <br>
-      <h6>COOK TIME:</h6>` + recipes[i].time + `<div class="cook-time"></div>
-    </div>
-   </div>
-  </div>`);
+      // append elements to container 
+      containerEl.append(columnEl);
 
-  // write text to elements 
-  // titleEL.text(recipes[i].title)
-  // console.log(recipes[i].title);
-  // timeEl.text(recipes[i].time);
-  // ingredientListEl.text(recipes[i].ingredientsList)
+      var ingredientsContainerEl = columnEl.find('.ingredients-container');
+      ingredientsContainerEl.append(ingredientsEl);
 
-  // append elements to container 
-  containerEl.append(columnEl);
-
-  var ingredientsContainerEl = columnEl.find('.ingredients-container');
-  ingredientsContainerEl.append(ingredientsEl);
-
-
+    };
 };
