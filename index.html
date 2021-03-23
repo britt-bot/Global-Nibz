@@ -4,144 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Seaweed+Script&display=swap');</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/style.css" />
     <title>🌎🌍🌏GLOBAL NIBZ🌮🍣🍕</title>
 </head>
+
 <body>
   <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white flex-row d-flex align-items-center">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="col s12 card-panel blue-grey darken-2 row center-align">
+      <h1>Global Nibz</h1>
+    </div>
+  </header>
 
-     <!-- Jumbotron -->
-  <div class='container'>
-    <div class='jumbotron'>
-      <h1 class='text-center'>GLOBAL NIBZ</h1>
-      <h4 class="text-center">Take a trip around the globe!</h4>
-</header>
+<!-- Photo -->
+  <div class="container-fluid center-align">
+    <img class="responsive-img" src="https://ensia.com/wp-content/uploads/2013/11/voices_food_narrative_main.jpg">
+    <h2>PHOTO CAPTION</h2>
+    <br>
+    <br>
+    <h2>FUN FACTS:</h2>
+    <p>Reprehenderit laboris minim ad irure velit non deserunt non occaecat proident. Esse ad pariatur ad labore et ex do. Lorem esse sint excepteur proident amet enim occaecat sint. Minim ea adipisicing in esse sunt qui nostrud duis dolore adipisicing cupidatat ut commodo.</p>
+  
+    <div class="row">
+      <a class="waves-effect waves-light btn-large blue-grey darken-1"><i class="material-icons left">explore</i>EXPLORE RANDOM PLACES!</a>
+      <h3 class="center-align">PICK YOUR FAVE NIBZ!</h3>
+    </div>
 
-    <!-- Search -->
-        <div class="row">
-          <div class="col-4">
-            <div class="row">
-              <div class="col">
-              <h5>Search for a place:</h5>
-              </div>
-            </div>  
-            <div class="row mb-3">
-              <div class="col">
-                <form class="form-inline my-2 my-lg-0">
-                  <div class="row">
-                    <div class="col-9">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  </div>
-                  <div class="col-2">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
-                  </div>            
-                  </div>
-                </form>
-                </div>
-            </div>  
-
-            <!-- Random -->
-            <div class="row mb-3">
-              <div class="col">
-                <h5>Pick a random place!:</h5>
-                <ul class="list-group">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Morbi leo risus</li>
-                  <li class="list-group-item">Porta ac consectetur ac</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-              </div>
-            </div>              
-          </div>
-            
-          <!-- Info -->
-          <div class="col-8">
-              <div class="row">
-                  <div class="col">
-                    <div class="card mb-3">
-                    <div class="card-body">
-                    PHOTO?
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card mb-3">
-                    <div class="card-body">
-                    FAST FACTS?
-                    </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recipes -->
-            <div class="row">
-              <div class="col">
-              <h5>RANDOM NIBZ:</h5>
-              </div>
-            </div>
-            <div class='row'>
-              <div class="col">
-                <div class="card bg-success text-white">
-                  <div class="card-body">
-                    RECIPE.
-                  </div>
-                </div>                
-              </div>
-              <div class="col">
-                <div class="card bg-warning text-white">
-                  <div class="card-body">
-                    RECIPE.
-                  </div>
-                </div>              
-              </div>
-              <div class="col">
-                <div class="card bg-danger text-white">
-                  <div class="card-body">
-                    RECIPE.                  
-                  </div>
-                </div>             
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
+    <!-- Recipes -->
+    <div class="row recipe-container"></div>
+  
 </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -150,46 +43,3 @@
     <script src="assets/script.js"></script>    
 </body>
 </html>
-
-
-<!-- 
-<div class="row">
-    <div class="col">
-    <h5>5-Day Forecast:</h5>
-    </div>
-  </div>
-  <div class='row'>
-    <div class="col">
-      <div class="card bg-primary text-white">
-        <div class="card-body">
-          card.
-        </div>
-      </div>                
-    </div>
-    <div class="col">
-      <div class="card bg-primary text-white">
-        <div class="card-body">
-          card.
-        </div>
-      </div>              
-    </div>
-    <div class="col">
-      <div class="card bg-primary text-white">
-        <div class="card-body">
-          card                  
-        </div>
-      </div>             
-    </div>
-    <div class="col">
-      <div class="card bg-primary text-white">
-        <div class="card-body">
-          card                  
-        </div>
-      </div>                
-    </div>
-    <div class="col">
-      <div class="card bg-primary text-white">
-        <div class="card-body">
-          card
-        </div>
-      </div>  -->
