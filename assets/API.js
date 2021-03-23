@@ -28,6 +28,8 @@ var cuisineType = [
 var recipeResults;
 //Function Calls
 getRecipes(generateRecipeFetchURL()).then(function(recipes) {
+    //TODO: add function to display DOM Elements
+    
     console.log(recipes);
 })
 
@@ -37,6 +39,7 @@ function generateRecipeFetchURL() {
     return url;
 }
 
+//API call that returns an array of 3 recipe objects
 function getRecipes(url) {
     var numberOfHits;
     console.log(url);
@@ -57,7 +60,6 @@ function getRecipes(url) {
                     recipes.push(datas[i].hits[0].recipe);
                 
                 }
-                //Display to DOM
                 //console.log(recipes);
                 return recipes;
             })
