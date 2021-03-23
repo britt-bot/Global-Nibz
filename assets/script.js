@@ -4,56 +4,82 @@
 var recipes = [
   {
     title: 'Title1', 
-    cookTime: '1:45',
-    ingredientsList: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip',
-    instructions: 'Spicy jalapeno bacon ipsum dolor amet ribeye deserunt mollit anim qui pariatur velit cupidatat in landjaeger quis shankle prosciutto ground round.',
+    time: 1,
+    ingredientsList: ['Nori grape silver beet', 'broccoli kombu beet greens', 'fava bean potato quandong celery.', 'Bunya nuts black-eyed', 'pea prairie turnip leek lentil', 'turnip greens parsnip',]
   },
   {
     title: 'Title2', 
-    cookTime: '1:45',
-    ingredientsList: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip',
-    instructions: 'Spicy jalapeno bacon ipsum dolor amet ribeye deserunt mollit anim qui pariatur velit cupidatat in landjaeger quis shankle prosciutto ground round.',
+    time: 2,
+    ingredientsList: ['Nori grape silver beet', 'broccoli kombu beet greens', 'fava bean potato quandong celery.', 'Bunya nuts black-eyed', 'pea prairie turnip leek lentil', 'turnip greens parsnip',]
   },
   {
     title: 'Title3', 
-    cookTime: '1:45',
-    ingredientsList: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip',
-    instructions: 'Spicy jalapeno bacon ipsum dolor amet ribeye deserunt mollit anim qui pariatur velit cupidatat in landjaeger quis shankle prosciutto ground round.',
+    time: 3,
+    ingredientsList: ['Nori grape silver beet', 'broccoli kombu beet greens', 'fava bean potato quandong celery.', 'Bunya nuts black-eyed', 'pea prairie turnip leek lentil', 'turnip greens parsnip',]
   }, 
   {
     title: 'Title4', 
-    cookTime: '1:45',
-    ingredientsList: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip',
-    instructions: 'Spicy jalapeno bacon ipsum dolor amet ribeye deserunt mollit anim qui pariatur velit cupidatat in landjaeger quis shankle prosciutto ground round.',
+    time: 4,
+    ingredientsList: ['Nori grape silver beet', 'broccoli kombu beet greens', 'fava bean potato quandong celery.', 'Bunya nuts black-eyed', 'pea prairie turnip leek lentil', 'turnip greens parsnip',]
   },
   {
     title: 'Title5', 
-    cookTime: '1:45',
-    ingredientsList: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip',
-    instructions: 'Spicy jalapeno bacon ipsum dolor amet ribeye deserunt mollit anim qui pariatur velit cupidatat in landjaeger quis shankle prosciutto ground round.',
+    time: 5,
+    ingredientsList: ['Nori grape silver beet', 'broccoli kombu beet greens', 'fava bean potato quandong celery.', 'Bunya nuts black-eyed', 'pea prairie turnip leek lentil', 'turnip greens parsnip',]
   },
   {
     title: 'Title6', 
-    cookTime: '1:45',
-    ingredientsList: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip',
-    instructions: 'Spicy jalapeno bacon ipsum dolor amet ribeye deserunt mollit anim qui pariatur velit cupidatat in landjaeger quis shankle prosciutto ground round.',
+    time: 6,
+    ingredientsList: ['Nori grape silver beet', 'broccoli kombu beet greens', 'fava bean potato quandong celery.', 'Bunya nuts black-eyed', 'pea prairie turnip leek lentil', 'turnip greens parsnip',]
   }
 ];
 
 // (dummy data in variables for us to easily switch out for real data) 
 
 // recipe container(s)
-var containerEl = $('.container'); 
+var containerEl = $('.recipe-container'); 
 
-// for loop (loop through data)
-for (let i = 0; i < recipes.length; i++);
+// for loop (loop recipe's array)
+for (i = 0; i < recipes.length; i++) {
+  console.log(recipes.length);
   // dynamically create elements to hold data and append to container 
-  var titleEL = $('');
-  var cookTimeEl = $('');
-  var ingredientListEl = $('');
-  var instructionsEl = $('');
+  var ingredientsEl = $('<ul class="collection">');
+
+  // ingredients loop
+  for (j = 0; j < recipes[i].ingredientsList.length; j++){
+    console.log(recipes[i].ingredientsList[j]);
+    var ingredientEl = $('<li>');
+    ingredientEl.text(recipes[i].ingredientsList[j]);
+
+    ingredientsEl.append(ingredientEl);
+  };
+
+
+  var columnEl = $(`<div class="col s4">
+   <div class="card blue-grey darken-1">
+    <div class="card-image">
+      <img src="https://properfoodie.com/wp-content/uploads/2020/07/featured-sushi-2b-feature-sushi-2b-1.jpg">
+      <span class="card-title">` + recipes[i].title + `</span>
+    </div>
+    <div class="card-content white-text center-align">
+      <h6>INGREDIENTS:</h6><div class="ingredients-container"></div>
+      <br>
+      <h6>COOK TIME:</h6>` + recipes[i].time + `<div class="cook-time"></div>
+    </div>
+   </div>
+  </div>`);
+
+  // write text to elements 
+  // titleEL.text(recipes[i].title)
+  // console.log(recipes[i].title);
+  // timeEl.text(recipes[i].time);
+  // ingredientListEl.text(recipes[i].ingredientsList)
 
   // append elements to container 
-  containerEl.append(titleEL);
-  containerEl.append(cookTimeEl);containerEl.append(ingredientListEl);
-  containerEl.append(instructionsEl);
+  containerEl.append(columnEl);
+
+  var ingredientsContainerEl = columnEl.find('.ingredients-container');
+  ingredientsContainerEl.append(ingredientsEl);
+
+
+};
