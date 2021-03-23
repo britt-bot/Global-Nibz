@@ -40,7 +40,7 @@ var recipes = [
 var containerEl = $('.recipe-container'); 
 
 // for loop (loop recipe's array)
-for (i = 0; i < recipes.length; i++) {
+for (let i = 0; i < 3; i++) {
   console.log(recipes.length);
   // dynamically create elements to hold data and append to container 
   var ingredientsEl = $('<ul class="collection">');
@@ -53,7 +53,6 @@ for (i = 0; i < recipes.length; i++) {
 
     ingredientsEl.append(ingredientEl);
   };
-
 
   var columnEl = $(`<div class="col s4">
    <div class="card blue-grey darken-1">
@@ -69,17 +68,10 @@ for (i = 0; i < recipes.length; i++) {
    </div>
   </div>`);
 
-  // write text to elements 
-  // titleEL.text(recipes[i].title)
-  // console.log(recipes[i].title);
-  // timeEl.text(recipes[i].time);
-  // ingredientListEl.text(recipes[i].ingredientsList)
-
   // append elements to container 
   containerEl.append(columnEl);
 
   var ingredientsContainerEl = columnEl.find('.ingredients-container');
   ingredientsContainerEl.append(ingredientsEl);
-
 
 };
