@@ -27,7 +27,7 @@ var cuisineType = [
 
 var recipeResults;
 //Function Calls
-fetchHits(generateRecipeFetchURL()).then(function(recipes) {
+getRecipes(generateRecipeFetchURL()).then(function(recipes) {
     console.log(recipes);
 })
 
@@ -37,25 +37,7 @@ function generateRecipeFetchURL() {
     return url;
 }
 
-//functions
-function getRecipes() {
-    var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)]
-    //First create url for hits
-    var url = `${BaseAPIpath}?${appID}&${appKey}&q=&calories=350%2B&cuisineType=${randomCuisineType}`;
-    var numberOfHits = fetchHits(url);
-    //run random index 3 times
-    var indices = [];
-    for (var i = 0; i < 3; i++) {
-        indices.push(randomIn(0, numberOfHits));
-        console.log("picked index: " + indices[i]);
-    }
-    //then add hits to query string 
-    url = `${BaseAPIpath}?${appID}&${appKey}&q=&calories=350%2B&cuisineType=${randomCuisineType}`;
-    console.log("url: " + url);
-    return url;
-
-}
-function fetchHits(url) {
+function getRecipes(url) {
     var numberOfHits;
     console.log(url);
     return fetch(url)
@@ -93,17 +75,9 @@ function displayFetchRecipes(url) {
             }
         })
 };
-//fetch call that saves hits to a variable
-function fetchRecipes(url) {
-    fetch(url)
-        .then(response => {
-            console.log(response.json());
-            return response.json();
-        })
-        .then(data => recipeResults = (data.hits))
-};
+
 //fetch call that console.logs everything
-function logFetchRecipes(url) {
+function logFetchRequest(url) {
     fetch(url)
         .then(response => {
             console.log(response)
@@ -111,20 +85,6 @@ function logFetchRecipes(url) {
         })
         .then(data => console.log(data));
 };
-
-//replace with object return
-function displayRecipeText(recipeObject) {
-    console.log("NEW RECIPE!!!!!!!!!!!!")
-    console.log(recipeObject);
-    console.log(recipeObject.recipe.label);
-    console.log("Ingredients")
-    for (var i = 0; i < recipeObject.recipe.ingredients.length; i++) {
-        console.log(recipeObject.recipe.ingredients[i].text);
-    }
-    console.log(recipeObject.recipe.url);
-
-}
-
 
 //Simplified Exclusive Random function
 function randomEx(min, exclusiveMax) {
