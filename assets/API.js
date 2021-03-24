@@ -10,9 +10,9 @@ var cuisineType = [
     "Asian",
     "British",
     "Caribbean",
-    "Central_Europe",
+    "Central%20Europe",
     "Chinese",
-    "Eastern_Europe",
+    "Eastern%20Europe",
     "French",
     "Indian",
     "Italian",
@@ -20,16 +20,18 @@ var cuisineType = [
     "Kosher",
     "Mediterranean",
     "Mexican",
-    "Middle_Eastern",
+    "Middle%20Eastern",
     "Nordic",
-    "South_East_Asian"
+    "South%20East%20Asian"
 ]
 
 var recipeResults;
 //Function Calls
 getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes))
-    //TODO: add function to display DOM Elements
-    // displayRecipes(recipes)
+
+//status code test url
+//var statusCodeURL = `https://httpstat.us/404`;
+//getRecipes(statusCodeURL).then(recipes =>  displayRecipes(recipes))
 
 function generateRecipeFetchURL() {
     var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)];
@@ -42,7 +44,15 @@ function getRecipes(url) {
     var numberOfHits;
     console.log(url);
     return fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            if(!response.ok){
+                displayErrorMessage(response.status);
+                console.log(`HTTPS status code failure`);
+                
+            }
+            return response.json();
+    })
         .then(data => {
             var promises = [];
             for (var i = 0; i < 3; i++) {

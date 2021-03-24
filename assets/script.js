@@ -81,5 +81,21 @@ console.log(recipes)
     };
 };
 
+//Adds error message to page when fetch fails
+function displayErrorMessage(errorCode){
+  var containerEl = $('.recipe-container');
+  var errorColumnEl = $(`<div class="col s12">`);
+
+  switch(errorCode){
+    case 401: 
+      errorColumnEl.text(`Sorry, we have reached our API fetch limit. Please wait 60 seconds and try again`);
+      break;
+    default:
+      errorColumnEl.text(`Sorry, we have encountered an error // Status Code: ${errorCode}`);
+      break
+  }
+  containerEl.append(errorColumnEl);
+  
+}
 
 //Add saved list and Modal
