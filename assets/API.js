@@ -27,11 +27,17 @@ var cuisineType = [
 
 var recipeResults;
 //Function Calls
-getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes))
+// getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes));
+
+getRecipes(generateRecipeFetchURL()).then(recipes =>  {
+    displayRecipes(recipes);
+    UpdateRecipeModal(recipes[0])});
+
+
 
 //status code test url
-//var statusCodeURL = `https://httpstat.us/404`;
-//getRecipes(statusCodeURL).then(recipes =>  displayRecipes(recipes))
+// var statusCodeURL = `https://httpstat.us/500`;
+// getRecipes(statusCodeURL).then(recipes =>  displayRecipes(recipes));
 
 function generateRecipeFetchURL() {
     var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)];
@@ -47,9 +53,7 @@ function getRecipes(url) {
         .then(response => {
             console.log(response);
             if(!response.ok){
-                displayErrorMessage(response.status);
-                console.log(`HTTPS status code failure`);
-                
+                displayErrorMessage(response.status);                
             }
             return response.json();
     })
