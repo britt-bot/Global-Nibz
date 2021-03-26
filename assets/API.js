@@ -145,9 +145,9 @@ function getQuote(cuisine) {
     .then(data => {
         console.log(data)
         var quoteContent = 
-        `<h2><h2>
-        <p>${randomQuote}</p>
-        <p>${data.data.translations[0].translatedText}</p>`;
+        `<h2 id="quote-title"><h2>
+        <p>"${randomQuote}"</p>
+        <p>"${data.data.translations[0].translatedText}"</p>`;
         $("#quote").html(quoteContent)
     })
     .catch(err => {
