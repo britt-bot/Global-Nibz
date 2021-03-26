@@ -117,9 +117,9 @@ function UpdateRecipeModal(recipe) {
   modalImageEl.attr(`src`, recipe.image);
   modalLinkEl.text(recipe.url);
   modalLinkEl.attr('href', recipe.url);
-  containerEl.append(recipeModal);
 }
 //Modal initializer
 $(document).ready(function(){
   $('.modal').modal();
 });
+

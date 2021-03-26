@@ -29,9 +29,10 @@ var recipeResults;
 //Function Calls
 // getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes));
 
-getRecipes(generateRecipeFetchURL()).then(recipes =>  {
+getRecipes(generateRecipeFetchURL()).then(recipes => {
     displayRecipes(recipes);
-    UpdateRecipeModal(recipes[0])});
+    UpdateRecipeModal(recipes[0])
+});
 
 
 
@@ -52,27 +53,29 @@ function getRecipes(url) {
     return fetch(url)
         .then(response => {
             console.log(response);
-            if(!response.ok){
-                displayErrorMessage(response.status);                
+            if (!response.ok) {
+                displayErrorMessage(response.status);
             }
             return response.json();
-    })
+        })
         .then(data => {
             var promises = [];
             for (var i = 0; i < 3; i++) {
                 var random = randomIn(0, data.count)
                 promises.push(fetch(`${url}&from=${random}&to=${random + 1}`)
-                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response);
+                        return response.json()})
                 )
             }
             return Promise.all(promises).then(datas => {
                 var recipes = [];
-                
+                console.log(datas);
                 for (var i = 0; i < 3; i++) {
                     recipes.push(datas[i].hits[0].recipe);
-                
+
                 }
-                //console.log(recipes);
+                console.log(`Inside fetch${recipes}`);
                 return recipes;
             })
         })
@@ -101,11 +104,12 @@ function logFetchRequest(url) {
 };
 
 //Simplified Exclusive Random function
-function randomEx(min, exclusiveMax) {
-    return Math.floor(Math.random() * (exclusiveMax - min)) + min;
+function randomEx(inclusiveMin, exclusiveMax) {
+    return Math.floor(Math.random() * (exclusiveMax - inclusiveMin)) + inclusiveMin;
 }
 //Simplified Inclusive Random function
-function randomIn(min, inclusiveMax) {
-    return Math.floor(Math.random() * (inclusiveMax - min) + 1) + min;
+function randomIn(exclusiveMin, inclusiveMax) {
+    return Math.floor(Math.random() * (inclusiveMax - exclusiveMin) + 1) + exclusiveMin;
 }
+
 
