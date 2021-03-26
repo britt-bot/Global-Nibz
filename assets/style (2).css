@@ -1,5 +1,6 @@
 :root {
-    background-color: #78909c;
+    color: #212121;
+    background-color: #F2F2F3;
 }
 
 .photo-container, .facts-container, .pick-nibz {
@@ -9,13 +10,12 @@
 .btn-large {
     font-family:"fredoka one";
     border-radius: 4px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    color: #eceff1;
+    margin-bottom: 40px;
+    color: #F2F2F3;
 }
 
 .btn-small {
-    color: #eceff1;
+    color: #B8B8B9;
     border-radius: 4px;
 }
 
@@ -60,67 +60,7 @@
     color: #B8B8B9;
 }
 
-.full-recipe {
-    padding-bottom: 5px;
-}
-
-.english-ver {
-    font-style: italic;
-    color: #263238;
-    font-family: "Montserrat";
-    margin-bottom: 1px;
-}
-
-.tran-ver {
-    font-style: italic;
-    color: #CECED0;
-    font-family: "Montserrat";
-    margin-top: 1px;
-}
-
-.row {
-    margin-bottom: 1px;
-}
-
-body {
-    font-family:"Montserrat";
-    color: #212121;
-}
-
-header {
-    color: #CECED0;
-}
-
-h1, h2, h3, h4, h5 {
-    font-family:"fredoka one";
-    color: #212121;
-}
-
-h1 {
-    margin:1rem;
-    color: #CECED0;
-}
-
-h3 {
-    margin: 0;
-}
-
-h6 {
-    font-family:"Montserrat";
-    color: #22222B;
-    font-weight: bold;
-}
-
-p {
-    margin:2rem;
-}
-
-ol {
-    margin-top: 0;
-}
-
-
-/* .page-desc {
+.page-desc {
     margin: 0;
 }
 
@@ -146,4 +86,40 @@ ol {
 
 .fave-nibz-desc {
     margin: 0;
-} */
+}
+
+body {
+    font-family:"Montserrat";
+    color: #212121;
+}
+
+header {
+    color: #212121;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:"fredoka one";
+    color: #212121;
+}
+
+h1 {
+    margin:1rem;
+}
+
+h3 {
+    margin: 0;
+}
+
+h6 {
+    font-family:"Montserrat";
+    color: #22222B;
+    font-weight: bold;
+}
+
+p {
+    margin:2rem;
+}
+
+ol {
+    margin-top: 0;
+}
