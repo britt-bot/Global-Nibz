@@ -119,6 +119,11 @@ ol {
     margin-top: 0;
 }
 
+.text-white {
+    margin:1rem;
+    color: #CECED0;
+}
+
 
 /* .page-desc {
     margin: 0;
