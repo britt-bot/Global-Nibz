@@ -12,19 +12,13 @@ Global Nibz is a web application designed for foodies looking to journey around 
 ![Screen Shot 2021-03-15 at 9 24 10 PM](https://user-images.githubusercontent.com/73543476/111246739-cdf6da00-85d4-11eb-99cf-6db2433dc3bf.png)
 
 ## User flow 
-On page load, load random recpie. 
-If the user would like a different recepie they can click the generate button again. 
-Possible link under recpie that will link the user outside the app. 
+On page load, load random recipe. 
+If the user would like a different recipe they can click the generate button again. 
+A link under recipe that will link the user outside the app. 
 
-## Possible API's 
+## API's 
 - Edamam Recipes 
-- Lingua Robot 
-- Flicker 
-- Open Food Facts 
+- Google Translate 
 
-## Front end framwork 
-- JQuery 
-- Angular 
-- Svelte 
-- React
-- ETC...
+## Frontend framwork 
+- materialize
