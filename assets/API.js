@@ -64,6 +64,12 @@ getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes))
     //TODO: add function to display DOM Elements
     // displayRecipes(recipes)
 
+function buttonRefresh() {
+    var recipeURL = generateRecipeFetchURL();
+    var recipes = getRecipes(recipeURL);
+    displayRecipes(recipes);
+}
+
 function generateRecipeFetchURL() {
     var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)];
     var url = `${BaseAPIpath}?${appID}&${appKey}&q=&calories=350%2B&cuisineType=${randomCuisineType}`;

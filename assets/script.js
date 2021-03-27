@@ -28,8 +28,8 @@ function displayRecipes(recipes){
         <span class="card-title recipe-label">` + recipes[i].label + `</span>
         <h6>INGREDIENTS:</h6><div class="ingredients-container"></div>
         <br>
-        <h6>FULL RECIPE:</h6><div class="full-recipe"><a class="waves-effect waves-light btn-small hoverable blue-grey darken-4" href="`+ recipes[i].url +`"><i class="material-icons right">forward</i>Full Recipe</a></a></div>
-        <div class="recipe-link"><a class="waves-effect waves-light btn-small hoverable blue-grey darken-4"><i class="material-icons right">favorite</i>Save To Your Fave Nibz</a></div>
+        <h6>FULL RECIPE:</h6><div class="full-recipe"><button class="waves-effect waves-light btn-small hoverable blue-grey darken-4" href="`+ recipes[i].url +`"><i class="material-icons right">forward</i>Full Recipe</a></button></div>
+        <div class="recipe-link"><button class="waves-effect waves-light btn-small hoverable blue-grey darken-4"><i class="material-icons right">favorite</i>Save To Your Fave Nibz</button></div>
       </div>
     </div>
     </div>`
