@@ -19,20 +19,21 @@ function displayRecipes(recipes){
       ingredientsEl.append(ingredientEl);
     };
 
-      var columnEl = $(`<div class="col s4">
-        <div class="card blue-grey darken-1">
-        <div class="card-image">
-        <img src= ${recipes[i].image}>
-        <span class="card-title">${recipes[i].label}</span>
-        </div>
-        <div class="card-content white-text center-align">
+    var columnEl = $(`<div class="col s4">
+    <div class="card hoverable blue-grey darken-2">
+      <div class="card-image">
+        <img src=` + recipes[i].image + `>
+      </div>
+      <div class="card-content white-text center-align recipe-card">
+        <span class="card-title recipe-label">` + recipes[i].label + `</span>
         <h6>INGREDIENTS:</h6><div class="ingredients-container"></div>
         <br>
-        <h6>COOK TIME:</h6>${recipes[i].url}<div class="cook-time"></div>
-        </div>
-        </div>
-        </div>`
-      );
+        <h6>FULL RECIPE:</h6><div class="full-recipe"><a class="waves-effect waves-light btn-small hoverable blue-grey darken-4" href="`+ recipes[i].url +`"><i class="material-icons right">forward</i>Full Recipe</a></a></div>
+        <div class="recipe-link"><a class="waves-effect waves-light btn-small hoverable blue-grey darken-4"><i class="material-icons right">favorite</i>Save To Your Fave Nibz</a></div>
+      </div>
+    </div>
+    </div>`
+    );
 
     // append elements to container 
     containerEl.append(columnEl);

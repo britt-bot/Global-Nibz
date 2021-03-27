@@ -1,5 +1,25 @@
+:root {
+    background-color: #78909c;
+}
+
+.photo-container, .facts-container, .pick-nibz {
+    width: 50%;
+}
+
+.material-icons {
+    color: #CECED0;
+}
+
 .btn-large {
     font-family:"fredoka one";
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: #CECED0;
+}
+
+.btn-small {
+    color: #CECED0;
     border-radius: 4px;
 }
 
@@ -19,30 +39,81 @@
 
 .card .card-image img {
     border-radius: 4px;  
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: #263238;
 }
 
 .card .card-content {
     border-radius: 4px;  
 }
 
+.card-title {
+    font-family:"fredoka one";
+    text-decoration: underline;
+    padding: 5px;
+    color: #CECED0;
+}
+
 .directions {
     margin-top: 0;
 }
 
+.collection {
+    border-color: #22222B;
+    color: #B8B8B9;
+    margin-bottom: 5px;
+}
+
+.full-recipe {
+    padding-bottom: 5px;
+}
+
+.english-ver {
+    font-style: italic;
+    color: #263238;
+    font-family: "Montserrat";
+    margin-bottom: 1px;
+}
+
+.tran-ver {
+    font-style: italic;
+    color: #CECED0;
+    font-family: "Montserrat";
+    margin-top: 1px;
+}
+
+.row {
+    margin-bottom: 1px;
+}
+
 body {
     font-family:"Montserrat";
+    color: #263238;
 }
 
 header {
-    color:white;
+    color: #CECED0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
     font-family:"fredoka one";
+    color: #263238;
 }
 
 h1 {
     margin:1rem;
+    color: #CECED0;
+}
+
+h3 {
+    margin: 0;
+}
+
+h6 {
+    font-family:"Montserrat";
+    color: #22222B;
+    font-weight: bold;
 }
 
 p {
@@ -52,3 +123,26 @@ p {
 ol {
     margin-top: 0;
 }
+
+
+/* .page-desc {
+    margin: 0;
+}
+.app-name {
+    margin: 0;
+}
+.app-description {
+    margin: 0;
+}
+.fun-facts-head {
+    margin: 0;
+}
+.fun-facts-container {
+    margin: 0;
+}
+.fav-nibz-head {
+    margin: 0;
+}
+.fave-nibz-desc {
+    margin: 0;
+} */
