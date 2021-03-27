@@ -2,10 +2,10 @@
 var BaseAPIpath = "https://api.edamam.com/search?";
 var appID = "app_id=278f7b03";
 var appKey = "app_key=d50111eac3df1610dfa7f3435b014a99";
-var quote = [ "You can't live a full life on an empty stomach.", "Hard work should be rewarded by good food.", "Eating is a necessity but cooking is an art.", "A recipe is a story that ends with a good meal.", "People confuse me. Food Doesn't.", "Tell me what you eat, and I will tell you who you are."
+var quote = ["You can't live a full life on an empty stomach.", "Hard work should be rewarded by good food.", "Eating is a necessity but cooking is an art.", "A recipe is a story that ends with a good meal.", "People confuse me. Food Doesn't.", "Tell me what you eat, and I will tell you who you are."
 ]
 var asianLanguage = [
-    "ko","lo", "mn","hmn","vi","th","my"
+    "ko", "lo", "mn", "hmn", "vi", "th", "my"
 ]
 
 var caribbeanLanguage = [
@@ -17,7 +17,7 @@ var centralEuropeLanguage = [
 ]
 
 var chineseLanguage = [
-    "zh-CN","zh-TW",
+    "zh-CN", "zh-TW",
 ]
 
 var easternEuropeLang = [
@@ -43,9 +43,9 @@ var cuisineType = [
     "Asian",
     "British",
     "Caribbean",
-    "Central_Europe",
+    "Central%20Europe",
     "Chinese",
-    "Eastern_Europe",
+    "Eastern%20Europe",
     "French",
     "Indian",
     "Italian",
@@ -53,22 +53,31 @@ var cuisineType = [
     "Kosher",
     "Mediterranean",
     "Mexican",
-    "Middle_Eastern",
+    "Middle%20Eastern",
     "Nordic",
-    "South_East_Asian"
+    "South%20East%20Asian"
 ]
 
 var recipeResults;
+var favoritesList = [];
+var exploreBtnEl = $(`.explore-butn`);
+var recipeContainerEl = $(`.recipe-container`);
+var favoriteEl = $(`.favorite`);
 //Function Calls
-getRecipes(generateRecipeFetchURL()).then(recipes =>  displayRecipes(recipes))
-    //TODO: add function to display DOM Elements
-    // displayRecipes(recipes)
+//on page load
+checkFavorites();
+getRandomRecipes();
 
-function generateRecipeFetchURL() {
-    var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)];
-    var url = `${BaseAPIpath}?${appID}&${appKey}&q=&calories=350%2B&cuisineType=${randomCuisineType}`;
-    getQuote(randomCuisineType);
-    return url;
+//Function Def.
+function getRandomRecipes() {
+    getRecipes(generateRecipeFetchURL()).then(recipes => displayRecipes(recipes))
+
+    function generateRecipeFetchURL() {
+        var randomCuisineType = cuisineType[randomEx(0, cuisineType.length)];
+        var url = `${BaseAPIpath}?${appID}&${appKey}&q=&calories=350%2B&cuisineType=${randomCuisineType}`;
+        getQuote(randomCuisineType);
+        return url;
+    }
 }
 
 //API call that returns an array of 3 recipe objects
@@ -87,10 +96,10 @@ function getRecipes(url) {
             }
             return Promise.all(promises).then(datas => {
                 var recipes = [];
-                
+
                 for (var i = 0; i < 3; i++) {
                     recipes.push(datas[i].hits[0].recipe);
-                
+
                 }
                 //console.log(recipes);
                 return recipes;
@@ -133,33 +142,33 @@ function randomIn(min, inclusiveMax) {
 
 function getQuote(cuisine) {
 
-    var randomQuote = quote[randomEx(0,quote.length)]
+    var randomQuote = quote[randomEx(0, quote.length)]
 
     fetch(`https://translation.googleapis.com/language/translate/v2?q=${randomQuote}&target=${pickLanguages(cuisine)}&key=AIzaSyBe5i4hqGu1EP8s4B72eNKoivCfB1QPMJE`, {
-	"method": "POST",
+        "method": "POST",
     })
-    .then(response => {
-        // console.log(response);
-        return response.json()
-    })
-    .then(data => {
-        console.log(data)
-        var quoteContent = 
-        `<h5 class="english-ver">"${randomQuote}"</h5>
+        .then(response => {
+            // console.log(response);
+            return response.json()
+        })
+        .then(data => {
+            console.log(data)
+            var quoteContent =
+                `<h5 class="english-ver">"${randomQuote}"</h5>
         <h5 class="tran-ver">"${data.data.translations[0].translatedText}"</h5>`;
-        $("#quote").html(quoteContent)
-    })
-    .catch(err => {
-        console.error(err);
-    });
+            $("#quote").html(quoteContent)
+        })
+        .catch(err => {
+            console.error(err);
+        });
 };
 
 // console.log(languages[42])
 
-function pickLanguages(cuisineString){
+function pickLanguages(cuisineString) {
     switch (cuisineString) {
         case "American": return "en"
-        case "Asian":return asianLanguage[randomEx(0,asianLanguage.length)]
+        case "Asian": return asianLanguage[randomEx(0, asianLanguage.length)]
         case "British": return "en"
         case "Caribbean": return caribbeanLanguage[randomEx(0, caribbeanLanguage.length)]
         case "Central%20Europe": return centralEuropeLanguage[randomEx(0, centralEuropeLanguage.length)]
@@ -177,3 +186,37 @@ function pickLanguages(cuisineString){
         case "South%20East%20Asian": return asianLanguage[randomEx(0, asianLanguage.length)]
     }
 }
+
+function checkFavorites(){
+    if(localStorage.getItem("recipeFavorites")){
+        favoritesList = JSON.parse(localStorage.getItem("recipeFavorites"));
+    }
+    displayFavorites();
+}
+
+function displayFavorites(){
+    if (favoriteEl.children()) {
+        favoriteEl.empty();
+    }
+    for(var i = 0; i < favoritesList.length; i++){
+        favoriteEl.append($(`<div>${favoritesList[i]}</div>`))
+    }
+}
+
+exploreBtnEl.on(`click`, function () {
+    console.log("button clicked");
+    var recipeContainerEl = $(`.recipe-container`);
+    console.log(recipeContainerEl.children());
+    if (recipeContainerEl.children()) {
+        recipeContainerEl.empty();
+    }
+    getRandomRecipes()
+});
+
+recipeContainerEl.on(`click`, `.save-btn`, function(event) {
+    console.log("save button clicked");
+    var recipeTitle = $(this).parent().siblings(".card-title").eq(0).text();
+    favoritesList.push(recipeTitle);
+    localStorage.setItem("recipeFavorites", JSON.stringify(favoritesList));  
+    displayFavorites();
+})
