@@ -103,7 +103,6 @@ function displayFetchRecipes(url) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            //probably change this to 3 in the future!!!!!!!!!!!!!!!!!!!!!!!!!
             for (var i = 0; i < data.hits.length; i++) {
                 displayRecipeText(data.hits[i])
             }
