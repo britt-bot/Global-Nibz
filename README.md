@@ -29,6 +29,9 @@ https://doublelforce5.github.io/Global-Nibz/
 ## Collaborators 
 Brittany Cummings and Garrett Fite 
 
+## Contact 
+Email: lopez.olivia17@outlook.com
+
 ## MIT license
 Copyright (c) 2021 Olivia Lopez
 
