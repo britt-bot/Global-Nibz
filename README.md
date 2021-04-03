@@ -26,7 +26,7 @@ A link under recipe that will link the user outside the app.
 ## Link to deployed site
 https://doublelforce5.github.io/Global-Nibz/
 
-## collaborators 
+## Collaborators 
 Brittany Cummings and Garrett Fite 
 
 ## MIT license
