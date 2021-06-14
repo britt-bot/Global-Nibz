@@ -21,7 +21,7 @@ A link under recipe that will link the user outside the app.
 - Google Translate 
 
 ## Frontend framwork 
-- materialize
+- Materialize
 
 ## Link to deployed site
 https://doublelforce5.github.io/Global-Nibz/
