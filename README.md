@@ -16,6 +16,11 @@ On page load, load random recipe.
 If the user would like a different recipe they can click the generate button again. 
 A link under recipe that will link the user outside the app. 
 
+## Stack
+- CSS 
+- HTML
+- JavaScript
+
 ## API's 
 - Edamam Recipes 
 - Google Translate 
