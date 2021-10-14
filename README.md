@@ -34,6 +34,7 @@ Open the desired web browser and go to the page url for either the Repo or the D
 ## Credits
 
 Third Party Assets:
+
 [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -47,6 +48,7 @@ Third Party Assets:
 [Google Translate API](https://cloud.google.com/translate/)
  
 Collaborators:
+
 Garrett Fite and Olivia Lopez
 
 
