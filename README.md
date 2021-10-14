@@ -1,44 +1,58 @@
 # Global Nibz 
 
 ## Description
+
 Global Nibz is a web application designed for foodies looking to journey around the world without leaving the comfort and safty of their own kitchen. 
 
-## User story 
+## Table of Contents 
+
+This table of contents is to make it easy for users to find what they need.
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+
+## Installation
+
+Open the desired web browser and go to the page url for either the Repo or the Deployed project.
+
+[Global Nibz Deploy](https://doublelforce5.github.io/Global-Nibz/)
+
+
+## Usage 
+
 - As a foodie. 
 - I want to generate a random recipe with interesting facts associated with the recipe's culture. 
 - SO THAT I can learn more about the world through food. 
 
-## Completed project 
 ![Screen Shot 2021-03-27 at 1 28 57 PM](https://user-images.githubusercontent.com/73543476/112730597-732c7f00-8f00-11eb-9114-ef4680343b11.png)
 
-## User flow 
-On page load, load random recipe. 
-If the user would like a different recipe they can click the generate button again. 
-A link under recipe that will link the user outside the app. 
+## Credits
 
-## Stack
-- CSS 
-- HTML
-- JavaScript
+Third Party Assets:
+[https://developer.mozilla.org/en-US/docs/Web/CSS](CSS)
 
-## API's 
-- Edamam Recipes 
-- Google Translate 
+[https://developer.mozilla.org/en-US/docs/Web/HTML](HTML)
 
-## Frontend framwork 
-- Materialize
+[https://www.javascript.com/](JavaScript)
 
-## Link to deployed site
-https://doublelforce5.github.io/Global-Nibz/
+[https://materializecss.com/](Materialize)
 
-## Collaborators 
-Brittany Cummings and Garrett Fite 
+[https://developer.edamam.com/edamam-recipe-api](Edamam Recipes API)
 
-## Contact 
-Email: lopez.olivia17@outlook.com
+[https://cloud.google.com/translate/](Google Translate API)
+ 
+Collaborators:
+Garrett Fite and Olivia Lopez
 
-## MIT license
-Copyright (c) 2021 Olivia Lopez
+
+## License
+
+MIT License
+
+Copyright (c) 2021 Britt Bot
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
