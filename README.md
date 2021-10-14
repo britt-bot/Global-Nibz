@@ -34,17 +34,17 @@ Open the desired web browser and go to the page url for either the Repo or the D
 ## Credits
 
 Third Party Assets:
-[https://developer.mozilla.org/en-US/docs/Web/CSS](CSS)
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-[https://developer.mozilla.org/en-US/docs/Web/HTML](HTML)
+[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
-[https://www.javascript.com/](JavaScript)
+[JavaScript](https://www.javascript.com/)
 
-[https://materializecss.com/](Materialize)
+[Materialize](https://materializecss.com/)
 
-[https://developer.edamam.com/edamam-recipe-api](Edamam Recipes API)
+[Edamam Recipes API](https://developer.edamam.com/edamam-recipe-api)
 
-[https://cloud.google.com/translate/](Google Translate API)
+[Google Translate API](https://cloud.google.com/translate/)
  
 Collaborators:
 Garrett Fite and Olivia Lopez
